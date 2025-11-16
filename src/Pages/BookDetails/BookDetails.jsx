@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoredDB } from '../../Utility/addtoDB';
 
 const BookDetails = () => {
     const { id } = useParams()
@@ -12,6 +13,7 @@ const BookDetails = () => {
   }
 
   const {
+    
     bookName,
     author,
     image,
@@ -24,7 +26,9 @@ const BookDetails = () => {
     yearOfPublishing,
   } = singleBook;
 
-
+const handleMarkasRead =(id)=>{
+    addToStoredDB(id)
+}
 
     return (
         <div class="min-h-screen flex flex-col md:flex-row justify-center items-center  container mx-auto my-20">
@@ -75,7 +79,7 @@ const BookDetails = () => {
           </div>
 
           <div class="mt-6 flex gap-4">
-            <button class="btn text-black px-5 py-2 rounded-md hover:bg-gray-700 hover:text-white">
+            <button onClick={()=> handleMarkasRead(id)} class="btn text-black px-5 py-2 rounded-md hover:bg-gray-700 hover:text-white">
               Read
             </button>
             <button class="bg-sky-500 text-white px-5 py-2 rounded-md hover:bg-sky-600">

@@ -12,6 +12,7 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <Link to={'/'}><a className='font-semibold text-gray-500 text-sm'>Home</a></Link>
                         <Link><a className='font-semibold text-gray-500 text-sm'>Listed Books</a></Link>
                         <Link><a className='font-semibold text-gray-500 text-sm'>Pages to Read</a></Link>
                     </ul>
